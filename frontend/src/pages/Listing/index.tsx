@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import MovieCard from "components/MovieCard";
-import MovieScore from "components/MovieScore";
 import Pagination from "components/Pagination";
 import { BASE_URL } from "utils/requests";
 import { MoviePage } from "types/movie";
@@ -29,15 +28,6 @@ function Listing() {
         setPage(data);
       });
   }, [pageNumber]);
-
-  const movie = {
-    id: 1,
-    image:
-      "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg",
-    title: "The Witcher",
-    count: 2,
-    score: 4.5,
-  };
 
   const handlePageChange = (newPageNumber : number) => {
     setPageNumber(newPageNumber);
